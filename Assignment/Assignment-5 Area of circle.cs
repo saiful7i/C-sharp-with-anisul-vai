@@ -6,18 +6,18 @@ class Program
 
         Console.WriteLine("===== Cricle Area Calculator =====");
 
-        double area, radis; 
+        double area, radius; 
 
 
-        Console.Write("Enter the radis of Circle:");
-        radis = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Enter the radius of Circle:");
+        radius = Convert.ToDouble(Console.ReadLine());
 
         
 
 
-        Console.WriteLine($"Circle Area = 3.1416 * {radis}^2 ");
+        Console.WriteLine($"Circle Area = 3.1416 * {radius}^2 ");
 
-        area = 3.1416 * (radis*radis);
+        area = 3.1416 * (radius*radius);
 
         Console.WriteLine($"Result: {area}");
 
