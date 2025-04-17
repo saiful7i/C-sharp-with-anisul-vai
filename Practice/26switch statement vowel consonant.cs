@@ -10,36 +10,44 @@ class Program
         Console.Write("Please Enter a letter:");
         letter = Convert.ToChar(Console.ReadLine());
         
-        letter = char.ToUpper(letter);
+        //letter = char.ToUpper(letter);
 
-        if(letter >= 'A' && letter <= 'Z')
-        {
-            switch(letter)
+        //if(letter >= 'A' && letter <= 'Z')
+        //{
+            switch(char.ToUpper(letter))
             {
                 case 'A':
-                    Console.WriteLine($"{letter} is Vowel");
-                    break;
+                    //Console.WriteLine($"{letter} is Vowel");
+                    //break;
                 case 'E':
-                    Console.WriteLine($"{letter} is Vowel");
-                    break;
+                    //Console.WriteLine($"{letter} is Vowel");
+                    //break;
                 case 'I':
-                    Console.WriteLine($"{letter} is Vowel");
-                    break;
+                    //Console.WriteLine($"{letter} is Vowel");
+                    //break;
                 case 'O':
-                    Console.WriteLine($"{letter} is Vowel");
-                    break;
+                    //Console.WriteLine($"{letter} is Vowel");
+                    //break;
                 case 'U':
                     Console.WriteLine($"{letter} is Vowel");
                     break;
                 default:
+                    //Console.WriteLine($"{letter} is Consonant");
+                if (char.IsLetter(letter))
+                {
                     Console.WriteLine($"{letter} is Consonant");
+                }
+                else
+                {
+                    Console.WriteLine("Please Enter a Valid Charecter."); ;
+                }
                     break;
             }
-        }
-        else
-        {
-            Console.WriteLine("Please Enter a Valid Charecter.");
-        }
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Please Enter a Valid Charecter.");
+        //}
         
     }
 
