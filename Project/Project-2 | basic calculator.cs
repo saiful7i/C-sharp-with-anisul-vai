@@ -37,8 +37,14 @@ class Program
                     Console.WriteLine($"{num1} * {num2} = {result:F2}");
                     break;
                 case '/':
+                    if (num2 != 0) { 
                     result = num1 / num2;
                     Console.WriteLine($"{num1} / {num2} = {result:F2}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Can not divide by Zero");
+                    }
                     break;
                 default:
                     Console.WriteLine("Invalid Choose.");
