@@ -5,14 +5,14 @@ class Person
     public string name;
     public int age;
 
-    public Person()
+    public Person()    //default Constructor
     {
         name = "test";
         age = 0;
     
     }
 
-    public Person(string n, int a)
+    public Person(string n, int a) //dynamic|parameter Constructor
     {
         name = n;
         age = a;
