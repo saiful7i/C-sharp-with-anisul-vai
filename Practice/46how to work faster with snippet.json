@@ -1,0 +1,74 @@
+{
+	"Print to console with new line": {
+		"scope": "csharp",
+		"prefix": "writeLine",
+		"body": [
+			"Console.WriteLine($\"$1\");",
+			"$2"
+		],
+		"description": "Write a line to the console with string interpolation"
+	},
+
+	"Print to console in line": {
+		"scope": "csharp",
+		"prefix": "write",
+		"body": [
+			"Console.Write($\"$1\");",
+			"$2"
+		],
+		"description": "Write a line to the console with string interpolation"
+	},
+
+	"Print to console": {
+		"scope": "csharp",
+		"prefix": "cw",
+		"body": [
+			"Console.WriteLine(\"$1\");",
+			"$2"
+		],
+		"description": "Write a line to the console"
+	},
+	"Read Line": {
+		"scope": "csharp",
+		"prefix": "readLine",
+		"body": [
+			"${1:type} ${2:text} = Console.ReadLine();",
+			"$3"
+		],
+		"description": "Read a Line from the console"
+	},
+	"Create a class": {
+		"scope": "csharp",
+		"prefix": "createClass",
+		"body": [
+			"public class Program",
+			"{",
+				"\t$1",
+			"}",
+			"$2"
+		],
+		"description": "Create a class"
+	},
+	"Create a constructor": {
+		"scope": "csharp",
+		"prefix": "constructor",
+		"body": [
+				"public ${1:ClassName}(${2:parameter})",
+				"{",
+				"\t$3",
+				"}"
+		],
+		"description": "Create a constructor declaration"
+	},
+	"Main Method": {
+		"scope": "csharp",
+		"prefix": "psvm",
+		"body": [
+			"public static void Main(string[] args)",
+			"{",
+			"\tConsole.WriteLine(\"${1:text}\");",
+			"}"
+		],
+		"description": "Create a Main Method"
+	}
+}
