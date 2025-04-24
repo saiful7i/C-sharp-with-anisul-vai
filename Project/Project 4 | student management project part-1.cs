@@ -26,10 +26,13 @@ class  Student
           throw new ArgumentException("Date of birth can not be in the future");
         }
     if(string.IsNullOrWhiteSpace(name)){
-          throw new ArgumentException("Name can not be Null or Empty");
+          throw new ArgumentException("Name can not be Null or Empty.");
         }
     if(string.IsNullOrWhiteSpace(roll)){
-          throw new ArgumentException("Roll can not be Null or Empty");
+          throw new ArgumentException("Roll can not be Null or Empty.");
+        }
+    if(dateOfBirth == default){
+          throw new ArgumentException("Date of Birth can not be null.");
         }
   }
 
