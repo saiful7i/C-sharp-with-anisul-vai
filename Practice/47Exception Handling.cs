@@ -13,6 +13,10 @@ public class Program
         Console.Write($"Enter num 2 = ");
         int num2 = Convert.ToInt32(Console.ReadLine());
         
+        // if (num1 > 1 && num1 < 1000){
+
+        // }
+        
         double result = num1 / num2;
         Console.WriteLine($"{result}");
       }
@@ -24,9 +28,14 @@ public class Program
       {
         Console.WriteLine($"Invalid Input! Please Enter a valid integer");
       }
+      catch(DivideByZeroException){
+        Console.WriteLine($"Error: Can not divide by zero");
+        
+        
+      }
       catch (Exception ex)
       {
-        Console.WriteLine(ex);
+        Console.WriteLine($"{ex}");
         Console.WriteLine($"An Error Occured: {ex.Message}");
       }
       finally
