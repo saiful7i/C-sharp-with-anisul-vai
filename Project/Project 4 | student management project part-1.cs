@@ -19,6 +19,7 @@ class  Student
     DateOfBirth = dateOfBirth;
     Roll = roll;
   }
+ 
   //Method to check Input Validate 
   private static void ValidateInput(string name, DateTime dateOfBirth,string roll){
       if(dateOfBirth > DateTime.Now){
@@ -35,22 +36,18 @@ class  Student
   //Method to calculate age
   private int CalculateAge(){
     int age = DateTime.Now.Year - DateOfBirth.Year;
-    //check if the birthday for this year has occurred yet
-    if(DateTime.Now<DateOfBirth.AddYears(age)){
-      //if the birthday hasn't occurred yet, decrement the age by 1
-      age--;
+    //if the birthday hasn't occurred yet, decrement the age by 1
+    return DateTime.Now < DateOfBirth.AddYears(age) ? age-- : age;
     }
-    return age;
-  }
-
+ 
   public int Age =>CalculateAge(); // using Lambda Expression 
-
-//Method to Display Student Information 
+ 
+ //Method to Display Student Information 
   public void StudentInformation(){
      Console.WriteLine($"Roll:{Roll}\t Name:{Name}\t Date of Birth:{DateOfBirth.ToShortDateString()} \t Age:{Age}");
   }
-  
 }
+
  class Program
  {
   public static void Main(string[] args)
@@ -64,17 +61,12 @@ class  Student
       //Display Info
       Console.WriteLine($"====================================Student Information===================================");
       student1.StudentInformation();
-      student2.StudentInformation();
-      
-         
+      student2.StudentInformation();   
     }
     catch (Exception e)
     {
-      Console.WriteLine($"Error:{e.Message}");
-      
+      Console.WriteLine($"Error:{e.Message}");     
     }
-    
-    
   }
  }
 
