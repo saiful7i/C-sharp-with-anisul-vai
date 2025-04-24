@@ -12,17 +12,17 @@ public class Program
         double result = num1 / num2;
         Console.WriteLine($"{result}");
       }
-      catch(DivideByZeroException){
-        Console.WriteLine($"Error: Can not divide by zero");        
-      }
-      catch(ArgumentException e)
-      {
-        Console.WriteLine($"{e.Message}");        
-      }
+      // catch(DivideByZeroException){
+      //   Console.WriteLine($"Error: Can not divide by zero");        
+      // }
+      // catch(ArgumentException e)
+      // {
+      //   Console.WriteLine($"{e.Message}");        
+      // }
       catch (Exception ex)
       {
         Console.WriteLine($"{ex}");
-        Console.WriteLine($"An Error Occured: {ex.Message}");
+        Console.WriteLine($"An Error Occurred: {ex.Message}");
       }
       finally
       {
@@ -39,8 +39,7 @@ public class Program
             string input = Console.ReadLine() ?? "";
             if (string.IsNullOrEmpty(input))   
             {
-              Console.WriteLine($"{prompt} can not be null or empty");
-              continue; 
+             throw new ArgumentNullException($"{prompt} can not be null or empty");
             }
             return Convert.ToInt32(input);
           }
@@ -55,6 +54,11 @@ public class Program
           catch (FormatException)
           {
             Console.WriteLine($"Invalid Input! Please Enter a valid integer");
+          }
+          catch (Exception e)
+          {
+            Console.WriteLine($"Error: {e.Message}");
+            
           }          
         }
     }
