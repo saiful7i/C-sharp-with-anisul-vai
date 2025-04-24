@@ -14,14 +14,25 @@ class  Student
 
   //constructor to assign value for private field
   public Student(string name,DateTime dateOfBirth, string roll){
-    if(dateOfBirth > DateTime.Now){
-          throw new ArgumentException("Date of birth can not be in the future");
-        }
+    ValidateInput(name,dateOfBirth,roll);
     Name = name;
     DateOfBirth = dateOfBirth;
     Roll = roll;
   }
+  //Method to check Input Validate 
+  private static void ValidateInput(string name, DateTime dateOfBirth,string roll){
+      if(dateOfBirth > DateTime.Now){
+          throw new ArgumentException("Date of birth can not be in the future");
+        }
+    if(string.IsNullOrWhiteSpace(name)){
+          throw new ArgumentException("Name can not be Null or Empty");
+        }
+    if(string.IsNullOrWhiteSpace(roll)){
+          throw new ArgumentException("Roll can not be Null or Empty");
+        }
+  }
 
+  //Method to calculate age
   private int CalculateAge(){
     int age = DateTime.Now.Year - DateOfBirth.Year;
     //check if the birthday for this year has occurred yet
@@ -32,10 +43,9 @@ class  Student
     return age;
   }
 
-  public int Age{
-    get{return CalculateAge(); }  
-  }
+  public int Age =>CalculateAge(); // using Lambda Expression 
 
+//Method to Display Student Information 
   public void StudentInformation(){
      Console.WriteLine($"Roll:{Roll}\t Name:{Name}\t Date of Birth:{DateOfBirth.ToShortDateString()} \t Age:{Age}");
   }
