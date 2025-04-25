@@ -3,7 +3,7 @@ using System;
 class  Student
  {
   //Private Fields. for name,dateOfBirth & Roll
-  private string? _name; //string? start with assign null for Non-nullable Property.
+  private string? _name; //string? use to start with assign null for Non-nullable Property.
   private DateTime _dateOfBirth; 
   private string? _roll;
 
@@ -62,7 +62,7 @@ class  Student
       Student student2 = new Student(
         "Anisul Islam", new DateTime(2000,3,20),"CSE102");
       //Display Info
-      Console.WriteLine($"====================================Student Information===================================");
+      Console.WriteLine($"===================================Student Information==================================");
       student1.StudentInformation();
       student2.StudentInformation();   
     }
