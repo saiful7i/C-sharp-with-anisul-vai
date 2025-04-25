@@ -35,14 +35,12 @@ class  Student
           throw new ArgumentException("Date of Birth can not be null.");
         }
   }
-
   //Method to calculate age
   private int CalculateAge(){
     int age = DateTime.Now.Year - DateOfBirth.Year;
     //if the birthday hasn't occurred yet, decrement the age by 1
     return DateTime.Now < DateOfBirth.AddYears(age) ? age-- : age;
     }
- 
   public int Age =>CalculateAge(); // using Lambda Expression 
  
  //Method to Display Student Information 
@@ -50,7 +48,6 @@ class  Student
      Console.WriteLine($"Roll:{Roll}\t Name:{Name}\t Date of Birth:{DateOfBirth.ToShortDateString()} \t Age:{Age}");
   }
 }
-
  class Program
  {
   public static void Main(string[] args)
