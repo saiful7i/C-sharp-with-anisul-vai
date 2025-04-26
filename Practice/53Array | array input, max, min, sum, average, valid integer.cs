@@ -8,7 +8,7 @@ class Program
     try
     {
       Console.Write($"How many elements you want :");
-      int size = int.Parse(Console.ReadLine());
+      int size = ValidIntegerInput();
 
       //creating the array
       int[] numbers = new int[size];
@@ -17,7 +17,8 @@ class Program
       int sum = 0;
       for (int i = 0; i < numbers.Length; i++){
         Console.Write($"Enter element {i+1}:");
-        numbers[i] = int.Parse(Console.ReadLine());
+        int number = ValidIntegerInput();
+        numbers[i] = number;        
         sum = sum + numbers[i];
       }
 
@@ -48,19 +49,27 @@ class Program
     {
       Console.WriteLine($"Out of Memory. Unable to create arrays with such large dimensions.");
     }
-     catch (OverflowException)
-    {
-      Console.WriteLine($"Input is too large or small.");
-    }
-    catch (FormatException)
-    {
-      Console.WriteLine($"Invalid Input. Please enter valid integer.");
-      
-    }
     catch (Exception ex)
     {
       Console.WriteLine($"An error occurred: {ex.Message}");
       
     }
+  }
+  public static int ValidIntegerInput()
+  {
+        while (true)
+        {
+        string input = Console.ReadLine() ?? "";
+        if (int.TryParse(input, out int number))
+        {
+          return number;
+        }
+        else
+        {
+          Console.WriteLine($"Invalid Input. Please enter valid integer.");
+          
+        }
+        }
+        
   }
 }
