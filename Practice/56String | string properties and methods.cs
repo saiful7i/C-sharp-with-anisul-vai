@@ -21,8 +21,8 @@ public class Program
     string insertString = text.Insert(0,"Hi!");
     Console.WriteLine($"String Insert: {insertString}");
 
-    string removeString = text.Remove(2);
-    Console.WriteLine($"after Remove String: {removeString}");
+    //string removeString = text.Remove(2);
+   //Console.WriteLine($"after Remove String: {removeString}");
 
     string replaceString = text.Replace("Hello everyone!","Hi!");
     Console.WriteLine($"String Insert: {replaceString}");
