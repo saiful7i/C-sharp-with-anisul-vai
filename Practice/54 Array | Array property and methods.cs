@@ -20,6 +20,24 @@ public class Program
     Array.Reverse(number);
     Console.WriteLine("After Reversing");
     PrintArray(number);
+
+    int item = Array.IndexOf(number,2);
+    Console.WriteLine($"Index of Value 2:{item}");
+
+    bool exists = Array.Exists(number, number => number ==5);
+    Console.WriteLine($"5 is Exists on the Array:{exists}");
+
+    int[] copy = new int[number.Length];
+    Array.Copy(number, copy, number.Length);
+
+    Console.Write($"Copied Array:");
+    PrintArray(copy);
+
+    Array.Clear(copy,0, copy.Length);
+    Console.Write($"after clearing the Copied Array:");
+    PrintArray(copy);
+    
+    
     
   }
 
@@ -35,4 +53,5 @@ public class Program
 //length Properties= To print length of array
 //Rank = to Print the dimension of the array 
 
-//method Min(), Max(), Sum(), Average(), Sort(),Reverse()
+//method Min(), Max(), Sum(), Average(), Sort(),Reverse(),IndexOf().Exist()
+//Copy(), Clear
