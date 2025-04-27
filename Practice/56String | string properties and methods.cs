@@ -6,15 +6,23 @@ public class Program
     Console.WriteLine(text);
     Console.WriteLine($"Length of text: {text.Length}");
     Console.WriteLine($"0 index of text: {text[0]}");
+
+    var Words = text.Split(" ");
+    Console.WriteLine($"{string.Join(",", Words)}");
     
+    foreach (var word in Words){
+      Console.WriteLine($"{word}");
+      
+    }
+
     bool isEmpty = string.IsNullOrEmpty(text);
     Console.WriteLine($"Is string empty or null: {isEmpty}");
 
-    // string insertString = text.Insert(0,"Hi!");
-    // Console.WriteLine($"String Insert: {insertString}");
+    string insertString = text.Insert(0,"Hi!");
+    Console.WriteLine($"String Insert: {insertString}");
 
-    // string removeString = text.Remove(2);
-    // Console.WriteLine($"after Remove String: {removeString}");
+    string removeString = text.Remove(2);
+    Console.WriteLine($"after Remove String: {removeString}");
 
     string replaceString = text.Replace("Hello everyone!","Hi!");
     Console.WriteLine($"String Insert: {replaceString}");
@@ -22,7 +30,8 @@ public class Program
     bool isExist = text.Contains("Saiful");
     Console.WriteLine($"Saiful Is exit in the text:{isExist}");
     
-    
+    string reveresString = new string(text.Reverse().ToArray());
+    Console.WriteLine($"Reverse String: {reveresString}");
     
     string textUpper = text.ToUpper();
     Console.WriteLine($"String with Upper Case: {textUpper}");
